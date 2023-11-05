@@ -25,13 +25,17 @@ struct ContentView: View {
         ScrollView {
             VStack {
                 HStack {
-                    Image("your_logo_image")
+                    Image("logo1")
                         .resizable()
-                        .frame(width: 100, height: 100) // Ajustez la taille selon vos besoins
+                        .frame(width: 50, height: 50) // Ajustez la taille selon vos besoins
                     
-                    Text("Hello, User!")
-                        .font(.title)
-                        .padding()
+                    Text("Eco")
+                                            .font(.title)
+                                            .foregroundColor(.black)
+                                        
+                                    Text("Ventura")
+                                        .font(.title)
+                                        .foregroundColor(Color(#colorLiteral(red: 0.09411764706, green: 0.431372549, blue: 0.9333333333, alpha: 1))) // Utilisez la couleur bleue spécifiée
                 }
 
                 HStack {
@@ -67,18 +71,21 @@ struct ContentView: View {
                             .padding()
                             .background(Color.gray.opacity(0.2))
                             .cornerRadius(10)
+                            
                         }
                     }
                     .padding()
                 }
 
                 ScrollView(.vertical, showsIndicators: false) {
-                    HStack(spacing: 20) {
+                    HStack(spacing: 10) {
                         ForEach(categories, id: \.self) { category in
                             Text(category)
+                                
                                 .padding(.horizontal, 20)
                                 .padding(.vertical, 10)
                                 .background(
+                                    
                                     RoundedRectangle(cornerRadius: 20)
                                         .fill(selectedCategory == category ? Color.blue : Color.clear)
                                         .overlay(
@@ -86,7 +93,8 @@ struct ContentView: View {
                                                 .stroke(selectedCategory == category ? Color.clear : Color.blue, lineWidth: 1)
                                         )
                                 )
-                                .foregroundColor(selectedCategory == category ? .white : .blue)
+                                .foregroundColor(selectedCategory == category ?  .white : .blue)
+                                .frame(width:150 ,height: 100)
                                 .onTapGesture {
                                     selectedCategory = category
                                 }
