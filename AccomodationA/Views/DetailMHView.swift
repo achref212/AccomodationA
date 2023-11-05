@@ -14,7 +14,7 @@ struct HotelInfo: Identifiable {
     var galleryImages: [String]
     var description: String
 }
-struct DetailView: View {
+struct DetailMHView: View {
     var hotelInfo: HotelInfo // Vous devrez définir la structure HotelInfo avec les détails nécessaires
 
         var body: some View {
@@ -118,7 +118,7 @@ struct DetailView: View {
     struct HotelDetailView_Previews: PreviewProvider {
         static var previews: some View {
             // Utilisez un exemple d'hôtel pour les aperçus
-            DetailView(hotelInfo: HotelInfo(
+            DetailMHView(hotelInfo: HotelInfo(
                 name: "Hotel Name",
                 location: "Paris, France",
                 imageName: "hotel_image",
