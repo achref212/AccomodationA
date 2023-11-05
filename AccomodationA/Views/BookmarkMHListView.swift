@@ -9,7 +9,7 @@ struct ImageInfos: Identifiable {
     var racing: String
 }
 
-struct BookmarkView: View {
+struct BookmarkMHView: View {
     @State private var isGridViewSelected = true
     @State private var isListViewSelected = false
 
@@ -180,6 +180,6 @@ struct ImageDetailView: View {
 
 struct BookmarkView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarkView()
+        BookmarkMHView()
     }
 }
